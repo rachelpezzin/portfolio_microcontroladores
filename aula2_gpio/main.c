@@ -31,6 +31,12 @@ void atividade1(){
 		}
     }
 }
+/** */
+*@brief exemplo de 
+ */
+void atividade2(){
+
+}
 int main(void) {
 	atividade();
 }
