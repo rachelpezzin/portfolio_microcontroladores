@@ -20,10 +20,6 @@ ISR(INT0_vect){
 
 ISR(INT1_vect){
 	gCount++;
-	PORTC ^= (1 << PORTC0);
-	_delay_ms(100);
-	PORTC = 0;
-	gCount = 0;
 }
 
 int main(void){
@@ -36,6 +32,12 @@ int main(void){
 	
 	while(1)
 	{
-		
+		if (gCount >= 3)
+		{
+			PORTC = (1 << PORTC0);
+			_delay_ms(100);
+			PORTC = 0;
+			gCount = 0;
+		}
 	}
 }
